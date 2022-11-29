@@ -20,13 +20,20 @@
     reverse_proxy pushgateway:9091
 }
 
-:3000 {
-    reverse_proxy grafana:3000
-}
-
 :3100 {
     basicauth /* {
         {$ADMIN_USER} {$ADMIN_PASSWORD_HASH}
     }
     reverse_proxy loki:3100
+}
+
+:8080 {
+    basicauth /* {
+        {$ADMIN_USER} {$ADMIN_PASSWORD_HASH}
+    }    
+    reverse_proxy cadvisor:8080
+}
+
+:3000 {
+    reverse_proxy grafana:3000
 }
