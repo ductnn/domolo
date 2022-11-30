@@ -155,6 +155,7 @@ services:
       - config-minio
     expose:
       - 9000
+      - 9001
     volumes:
       - ./.data/minio:/data
     restart: always
@@ -174,6 +175,7 @@ services:
       - "9091:9091"
       - "3100:3100"
       - "9000:9000"
+      - "9001:9001"
     volumes:
       - ./caddy:/etc/caddy
     environment:

@@ -18,7 +18,7 @@ common:
       secret_access_key: supersecret
       s3forcepathstyle: true
   ring:
-    instance_addr: 127.0.0.1
+    instance_addr: 0.0.0.0
     kvstore:
       store: inmemory
   # storage:
