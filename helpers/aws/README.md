@@ -32,5 +32,6 @@ To get started on **AWS EC2**:
 
 - Copy `promtail-ec2.yaml` configuration present here to base `promtail` configuration to enable EC2 service discovery
 - `docker compose up -d`
+- More [docs](https://grafana.com/blog/2020/07/13/loki-tutorial-how-to-set-up-promtail-on-aws-ec2-to-find-and-analyze-your-logs/)
 
 ### TODO
