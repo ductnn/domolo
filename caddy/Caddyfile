@@ -37,3 +37,7 @@
 :3000 {
     reverse_proxy grafana:3000
 }
+
+:9000 {
+    reverse_proxy minio:9000
+}

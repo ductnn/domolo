@@ -10,24 +10,44 @@ server:
 common:
   path_prefix: /tmp/loki
   storage:
-    filesystem:
-      chunks_directory: /tmp/loki/chunks
-      rules_directory: /tmp/loki/rules
-  replication_factor: 1
+    s3:
+      endpoint: minio:9000
+      insecure: true
+      bucketnames: loki-data
+      access_key_id: loki
+      secret_access_key: supersecret
+      s3forcepathstyle: true
   ring:
     instance_addr: 127.0.0.1
     kvstore:
       store: inmemory
+  # storage:
+  #   filesystem:
+  #     chunks_directory: /tmp/loki/chunks
+  #     rules_directory: /tmp/loki/rules
+  # replication_factor: 1
+  # ring:
+  #   instance_addr: 127.0.0.1
+  #   kvstore:
+  #     store: inmemory
 
 schema_config:
   configs:
-    - from: 2020-10-24
+    - from: 2021-08-01
       store: boltdb-shipper
-      object_store: filesystem
+      object_store: s3
       schema: v11
       index:
         prefix: index_
         period: 24h
+  # configs:
+  #   - from: 2020-10-24
+  #     store: boltdb-shipper
+  #     object_store: filesystem
+  #     schema: v11
+  #     index:
+  #       prefix: index_
+  #       period: 24h
 
 limits_config:
   ingestion_rate_mb: 1024
@@ -35,3 +55,6 @@ limits_config:
 
 ruler:
   alertmanager_url: http://localhost:9093
+  storage:
+    s3:
+      bucketnames: loki-ruler

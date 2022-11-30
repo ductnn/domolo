@@ -72,6 +72,8 @@ services:
     container_name: loki
     volumes:
       - ./loki/loki-config.yaml:/etc/loki/loki-config.yaml
+    depends_on:
+      - minio
     command: -config.file=/etc/loki/loki-config.yaml
     expose:
       - 3100
@@ -139,6 +141,28 @@ services:
     labels:
       org.label-schema.group: "monitoring"
 
+  minio:
+    image: minio/minio
+    container_name: minio
+    entrypoint:
+      - sh
+      - -euc
+      - |
+        mkdir -p /data/loki-data && \
+        mkdir -p /data/loki-ruler &&
+        minio server /data
+    env_file:
+      - config-minio
+    expose:
+      - 9000
+    volumes:
+      - ./.data/minio:/data
+    restart: always
+    networks:
+      - monitor-net
+    labels:
+      org.label-schema.group: "monitoring"
+
   caddy:
     image: caddy:2.3.0
     container_name: caddy
@@ -149,6 +173,7 @@ services:
       - "9093:9093"
       - "9091:9091"
       - "3100:3100"
+      - "9000:9000"
     volumes:
       - ./caddy:/etc/caddy
     environment:
