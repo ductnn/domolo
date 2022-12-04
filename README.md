@@ -5,6 +5,8 @@ A monitoring and logging solution for Docker hosts and containers with [Promethe
 [NodeExporter](https://github.com/prometheus/node_exporter) and alerting with
 [AlertManager](https://github.com/prometheus/alertmanager).
 
+Inspired by [dockprom](https://github.com/stefanprodan/dockprom)
+
 ## Install
 
 Clone this repository on your Docker host, cd into `domolo` directory and run
