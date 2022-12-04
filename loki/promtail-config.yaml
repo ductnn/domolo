@@ -8,6 +8,8 @@ positions:
 clients:
   # replace "loki" with server address for external hosts
   - url: http://loki:3100/loki/api/v1/push
+    external_labels:
+      host: docker
 
 scrape_configs:
   - job_name: flog_scrape 
