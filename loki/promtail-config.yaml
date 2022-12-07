@@ -12,7 +12,7 @@ clients:
       host: docker
 
 scrape_configs:
-  - job_name: flog_scrape 
+  - job_name: container_logs
     docker_sd_configs:
       - host: unix:///var/run/docker.sock
         refresh_interval: 5s
