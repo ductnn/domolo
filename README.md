@@ -126,6 +126,7 @@ Simple dashboards on *Grafana*:
 ## Loki
 
 Setup config *loki* in file [loki-config](loki/loki-config.yaml)
+
 *TODO: Setup s3*
 
 Config scrape *logs* with *promtail*, create file `promtail-config.yaml` and setup:
