@@ -3,6 +3,8 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/ductnn/Dockerfile/pulls)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
+![Domolo](assets/domolo.png)
+
 A monitoring and logging solution for Docker hosts and containers with [Prometheus](https://prometheus.io/),
 [Grafana](http://grafana.org/), [Loki](https://github.com/grafana/loki/), [cAdvisor](https://github.com/google/cadvisor),
 [NodeExporter](https://github.com/prometheus/node_exporter) and alerting with
