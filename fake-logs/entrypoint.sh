@@ -5,7 +5,6 @@ red="\033[1;31m"
 green="\033[1;32m"
 yellow="\033[0;33m"
 blue="\033[0;34m"
-
 bwhite="\033[1;37m"
 
 no_color="\033[0m"
@@ -23,7 +22,7 @@ do
    WAIT=$(shuf -i $1-$2 -n 1)
    sleep $(echo "scale=4; $WAIT/1000" | bc)
    I=$(shuf -i 1-4 -n 1)
-   D=`date -Iseconds`
+   D=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
    case "$I" in
       "1") echo -e "${bwhite}$D${no_color} ${red}ERROR${no_color} An error is usually an exception that has been caught and not handled."
       ;;
