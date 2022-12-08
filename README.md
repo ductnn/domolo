@@ -113,15 +113,15 @@ Simple dashboards on *Grafana*:
 
 ***Node Exporter***
 
-![NodeExporter](assets/node_exporter.png)
+![NodeExporter](https://raw.githubusercontent.com/ductnn/domolo/master/assets/node_exporter.png)
 
 ***Monitor Services***
 
-![MonitorServices](assets/monitor_service.png)
+![MonitorServices](https://raw.githubusercontent.com/ductnn/domolo/master/assets/monitor_service.png)
 
 ***Docker Host***
 
-![DockerHost](assets/docker_host.png)
+![DockerHost](https://raw.githubusercontent.com/ductnn/domolo/master/assets/docker_host.png)
 
 ## Loki
 
@@ -199,23 +199,23 @@ and run command `docker-compose -f docker-compose.with-flogs.yml up -d`
 
 Navigate *[grafana](localhost:3000)* and open `Explore`:
 
-![Explore](assets/explore.png)
+![Explore](https://raw.githubusercontent.com/ductnn/domolo/master/assets/explore.png)
 
 So, we can select `labels` and views `logs`:
 
-![Labels](assets/labels.png)
+![Labels](https://raw.githubusercontent.com/ductnn/domolo/master/assets/labels.png)
 
 Ex: Select `label container` and view log container `fake-logs`:
 
-![LabelFlog](assets/label_flog.png)
+![LabelFlog](https://raw.githubusercontent.com/ductnn/domolo/master/assets/label_flog.png)
 
-![LogsFlog](assets/flog_logs.png)
+![LogsFlog](https://raw.githubusercontent.com/ductnn/domolo/master/assets/flog_logs.png)
 
 More logs: *logs system, other containers, ....*
 
-![SystemLogs](assets/syslogs.png)
+![SystemLogs](https://raw.githubusercontent.com/ductnn/domolo/master/assets/syslogs.png)
 
-![ContainersLogs](assets/containers_logs.png)
+![ContainersLogs](https://raw.githubusercontent.com/ductnn/domolo/master/assets/containers_logs.png)
 
 ## Show your support
 Give a ⭐ if you like this application ❤️
