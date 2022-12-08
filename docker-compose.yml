@@ -164,6 +164,9 @@ services:
   # Fake Logs
   flogs:
     image: ductn4/flog:v1
+    build:
+      context: ./fake-logs
+      dockerfile: Dockerfile
     container_name: fake-logs
     restart: always
     networks:
