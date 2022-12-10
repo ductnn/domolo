@@ -173,3 +173,13 @@ services:
       - monitor-net
     labels:
       org.label-schema.group: "monitoring"
+
+  glogs:
+    image: ductn4/glog:v1
+    # Source code: https://github.com/ductnn/glog
+    container_name: glogs
+    restart: always
+    networks:
+      - monitor-net
+    labels:
+      org.label-schema.group: "monitoring"
