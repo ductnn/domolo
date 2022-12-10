@@ -88,7 +88,7 @@ This file will setup 3 agents:
   - `cAdvisor`
   - `promtail`
 
-Then, we need config scrape *metric* onn **prometheus server**:
+Then, we need config scrape *metric* on **prometheus server**:
 
 Live monitoring **prometheus server**:
 ```yaml
