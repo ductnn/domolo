@@ -175,7 +175,7 @@ services:
       org.label-schema.group: "monitoring"
 
   glogs:
-    image: ductn4/glog:v1
+    image: ductn4/glog:latest
     # Source code: https://github.com/ductnn/glog
     container_name: glogs
     restart: always
