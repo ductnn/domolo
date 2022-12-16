@@ -222,7 +222,7 @@ More logs: *logs system, other containers, ....*
 ![ContainersLogs](https://raw.githubusercontent.com/ductnn/domolo/master/assets/containers_logs.png)
 
 ## Show your support
-Give a ⭐ if you like this application ❤️
+Give a ⭐ if you like *domolo* ❤️
 
 ## Contribution
 All contributions are welcomed in this project!
