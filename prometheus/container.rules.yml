@@ -1,0 +1,29 @@
+groups:
+    - name: Pod-Resource
+      rules:
+        - alert: PodCPUUsage
+          expr: sum(rate(container_cpu_usage_seconds_total{container_name!="POD",container_name!="",container_name!="POD",container_name!="POD"}[5m])) by (namespace, pod) / sum(kube_pod_container_resource_requests_cpu_cores{container_name!="POD",container_name!="",container_name!="POD",container_name!="POD"}) by (namespace, pod) * 100 > 80
+          for: 1m
+          labels:
+            severity: warning
+          annotations:
+            summary: "Pod CPU usage is high"
+            description: "Pod CPU usage is high ({{ $value }}%) in namespace {{ $labels.namespace }} and pod {{ $labels.pod }}."
+
+        - alert: PodMemoryUsage
+          expr: sum(container_memory_working_set_bytes{container_name!="POD",container_name!="",container_name!="POD",container_name!="POD"}) by (namespace, pod) / sum(kube_pod_container_resource_requests_memory_bytes{container_name!="POD",container_name!="",container_name!="POD",container_name!="POD"}) by (namespace, pod) * 100 > 80
+          for: 1m
+          labels:
+            severity: warning
+          annotations:
+            summary: "Pod memory usage is high"
+            description: "Pod memory usage is high ({{ $value }}%) in namespace {{ $labels.namespace }} and pod {{ $labels.pod }}."
+        
+        - alert: PodFrequentRestart
+          expr: increase(kube_pod_container_status_restarts_total{container_name!="POD",container_name!="",container_name!="POD",container_name!="POD"}[5m]) > 0
+          for: 1m
+          labels:
+            severity: warning
+          annotations:
+            summary: "Pod frequent restart"
+            description: "Pod frequent restart in namespace {{ $labels.namespace }} and pod {{ $labels.pod }}."
